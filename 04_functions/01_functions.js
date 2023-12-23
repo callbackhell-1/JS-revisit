@@ -43,3 +43,52 @@ function loginUserMessage(username = "sam Altman") {
 
 console.log(loginUserMessage("John")); //John just logged in
 console.log(loginUserMessage()); //sam Altman just logged in
+
+/*******************************************/
+// if we don't have idea of number of arguments
+
+//rest operator (...)
+function calculateCartPrice(...num1) {
+  return num1;
+}
+
+console.log(calculateCartPrice(20, 300, 900));
+//[ 20, 300, 900 ]
+
+function calculateCartPrice1(val1, valu2, ...num1) {
+  return num1;
+}
+
+console.log(calculateCartPrice1(200, 300, 500, 800));
+//[ 500, 800 ] -->val1 get 200, val2 gets 300, num1 gets 500&800 in array
+
+/*******/
+
+const user = {
+  username: "John_Wick",
+  prices: 199,
+};
+
+function handleObject(anyobject) {
+  console.log(
+    `Username is ${anyobject.username} and price is ${anyobject.price}`
+  );
+}
+
+// handleObject(user);
+// we can also pass the object in the func args.
+handleObject({
+  username: "sama",
+  price: 399,
+});
+
+/**** */
+
+const myNewArray = [200, 400, 100, 600];
+
+function returnSecondValue(getArray) {
+  return getArray[1];
+}
+
+// console.log(returnSecondValue(myNewArray)); //400
+console.log(returnSecondValue([200, 400, 500, 1000])); //400
