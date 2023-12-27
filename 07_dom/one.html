@@ -20,9 +20,10 @@
       <h2>Lorem, ipsum dolor 3.</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
       <ul>
-        <li>one</li>
-        <li>Two</li>
-        <li>Three</li>
+        <li class="list-item">one</li>
+        <li class="list-item">Two</li>
+        <li class="list-item">Three</li>
+        <li class="list-item">Three</li>
       </ul>
       <input type="password" />
     </div>
@@ -95,7 +96,7 @@
 
     const password_select = document.querySelector('input[type="password"]');
     console.log(password_select);
-    */
+ 
 
     //querySelectorAll
     const all_list = document.querySelectorAll("li");
@@ -110,6 +111,22 @@
     all_list.forEach((value) => {
       console.log(value); // print all the list
       value.style.color = "red";
+    });
+       */
+    const list_items = document.getElementsByClassName("list-item");
+    console.log(list_items); // returns HTML collection(different from node list)
+    // HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+
+    // As it return HTML collection , which is different from NOdeList & Array. Now if we want to iterate over it(as we are not able to perform forEach ) then we have to convert it to Array
+
+    //convert method :
+    const converted_to_array = Array.from(list_items);
+    console.log(converted_to_array);
+    //(4) [li.list-item, li.list-item, li.list-item, li.list-item] , this is converted to an array now if we chk in prototype we get forEach/all array methods
+
+    converted_to_array.forEach((value_from_list) => {
+      value_from_list.style.color = "blue";
+      console.log(value_from_list);
     });
   </script>
 </html>
