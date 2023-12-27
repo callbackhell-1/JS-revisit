@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      .bg-black {
+        background-color: black;
+        color: white;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body class="bg-black">
+    <div>
+      <h1 id="title" class="heading">
+        DOM learning <span style="display: none">Test text</span>
+      </h1>
+      <h2>Lorem, ipsum dolor 1.</h2>
+      <h2>Lorem, ipsum dolor 2.</h2>
+      <h2>Lorem, ipsum dolor 3.</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+      <ul>
+        <li>one</li>
+        <li>Two</li>
+        <li>Three</li>
+      </ul>
+      <input type="password" />
+    </div>
+  </body>
+  <script>
+    const myUl = document.querySelector("ul");
+    console.log(myUl);
+
+    const myLiFromUl = myUl.querySelector("li");
+    console.log(myLiFromUl);
+
+    myLiFromUl.style.backgroundColor = "green";
+    myLiFromUl.style.padding = "20px";
+
+    myLiFromUl.innerText = "I am from console 5";
+  </script>
+</html>
+
+<!-- 1. Requirements -->
+<!-- Add 3 ul and make first list b-color : green -->
