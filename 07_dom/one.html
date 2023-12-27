@@ -19,6 +19,11 @@
       <h2>Lorem, ipsum dolor 2.</h2>
       <h2>Lorem, ipsum dolor 3.</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+      <ul>
+        <li>one</li>
+        <li>Two</li>
+        <li>Three</li>
+      </ul>
       <input type="password" />
     </div>
   </body>
@@ -91,5 +96,20 @@
     const password_select = document.querySelector('input[type="password"]');
     console.log(password_select);
     */
+
+    //querySelectorAll
+    const all_list = document.querySelectorAll("li");
+    console.log(all_list); // returns all li in the NodeList
+    //NodeList is not a pure array. bcoz it doesn't contain map and other prototype.
+
+    //all_list.style.color="green" // not possible coz as we know all_list returned a NodeList, so we have to give idx also.
+
+    all_list[0].style.color = "green";
+
+    //To change all the li color
+    all_list.forEach((value) => {
+      console.log(value); // print all the list
+      value.style.color = "red";
+    });
   </script>
 </html>
