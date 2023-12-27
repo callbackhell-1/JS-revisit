@@ -12,34 +12,62 @@
   </head>
   <body class="bg-black">
     <div>
-      <h1 id="title" class="heading">DOM learning</h1>
+      <h1 id="title" class="heading">
+        DOM learning <span style="display: none">Test text</span>
+      </h1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
     </div>
   </body>
   <script>
     /*
-    document.getElementById("title").innerHTML = "<h1>Hello World</h1>";
+        document.getElementById("title").innerHTML = "<h1>Hello World</h1>";
 
-    document.getElementById("title") // -> gives element whose id is title.
+        document.getElementById("title") // -> gives element whose id is title.
 
-     document.getElementById("title").id -> gives id name
+         document.getElementById("title").id -> gives id name
 
-    document.getElementById("title").className -> gives class name
+        document.getElementById("title").className -> gives class name
 
-    document.getElementById("title").getAttribute('id') -> gives all attributes name
+        document.getElementById("title").getAttribute('id') -> gives all attributes name
 
- document.getElementById("title").setAttribute("class", "newClass"); // -> set a class to the id with id as title, and over prev. class
+     document.getElementById("title").setAttribute("class", "newClass"); // -> set a class to the id with id as title, and over prev. class
 
-    */
+
+      //apply style :
+      // title.style = "color:red";
+      // title.style.color = "green";
+
+        */
     const title = document.getElementById("title");
 
-    //apply style :
-    // title.style = "color:red";
-    // title.style.color = "green";
-
-    title.getInnerHTML();
+    title.getInnerHTML;
     title.innerText;
     title.textContent;
     //All three give same output as DOM learning
+
+    /**
+     * Difference between "title.innerText" & "title.textContent"
+     * <h1 id="title" class="heading">DOM learning <span style ="display :none">Test Text</span></h1>
+     *
+     * const title = document.getElementById("title");
+     *
+     * title.innerText gives "DOM learning"
+     * title.textContent gives "DOM learning Test Text"
+     *
+     * innerText display only visible text.
+     * textContent display hidden text as well
+     *
+     *  title.getInnerHTML gives html tag as well
+     * 
+     * 
+     * title.innerHTML
+          '\n        DOM learning <span style="display: none">Test text</span>\n      '
+
+      title.innerText
+      'DOM learning'
+
+      title.textContent
+      '\n        DOM learning Test text\n
+     */
   </script>
 </html>
