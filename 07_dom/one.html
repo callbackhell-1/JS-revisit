@@ -15,7 +15,11 @@
       <h1 id="title" class="heading">
         DOM learning <span style="display: none">Test text</span>
       </h1>
+      <h2>Lorem, ipsum dolor 1.</h2>
+      <h2>Lorem, ipsum dolor 2.</h2>
+      <h2>Lorem, ipsum dolor 3.</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+      <input type="password" />
     </div>
   </body>
   <script>
@@ -37,7 +41,7 @@
       // title.style = "color:red";
       // title.style.color = "green";
 
-        */
+
     const title = document.getElementById("title");
 
     title.getInnerHTML;
@@ -58,8 +62,8 @@
      * textContent display hidden text as well
      *
      *  title.getInnerHTML gives html tag as well
-     * 
-     * 
+     *
+     *
      * title.innerHTML
           '\n        DOM learning <span style="display: none">Test text</span>\n      '
 
@@ -69,5 +73,22 @@
       title.textContent
       '\n        DOM learning Test text\n
      */
+
+    //getElementsByClassName
+    const heading = document.getElementsByClassName("heading");
+    console.log(heading); //return HTML collection, instead of nodeList
+
+    //querySelector
+    const heading_2 = document.querySelector("h2");
+    console.log(heading_2); // it returns the first h2 not all.
+
+    const id_select = document.querySelector("#title");
+    console.log(id_select);
+
+    const class_select = document.querySelector(".heading");
+    console.log(class_select);
+
+    const password_select = document.querySelector('input[type="password"]');
+    console.log(password_select);
   </script>
 </html>
