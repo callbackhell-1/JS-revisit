@@ -22,5 +22,19 @@
       console.log(language); // now it contain 2 list
     }
     addLang("Python");
+    addLang("Golang");
+    // Above function ins not optimised,it traverse the whole tree.
+
+    function addLangOptimised(lang) {
+      const li = document.createElement("li");
+
+      li.appendChild(document.createTextNode(lang)); //instead of doing li.innerText = `${lang}`, we are doing this
+
+      document.querySelector(".language").appendChild(li);
+    }
+
+    addLangOptimised("Typescript");
   </script>
 </html>
+
+//Task : Difference b/w appendChild & innerText in terms of optimisation
