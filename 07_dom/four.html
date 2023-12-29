@@ -34,7 +34,24 @@
     }
 
     addLangOptimised("Typescript");
+
+    //Edit any value
+    const secondLang = document.querySelector("li:nth-child(2)");
+    console.log(secondLang); //<li> python…</li>
+
+    //approach 1:
+    // secondLang.innerHTML="Mojo"
+
+    //approach 2:
+    const newLi = document.createElement("li");
+    newLi.textContent = "Mojo";
+    secondLang.replaceWith(newLi);
+
+    //approach 3:
+    const firstLang = document.querySelector("li:nth-child(1)");
+    console.log(firstLang); //<li>Javascript</li>
+    firstLang.outerHTML = "<li>TypeScript</li>";
   </script>
 </html>
 
-//Task : Difference b/w appendChild & innerText in terms of optimisation
+<!-- Task : Difference b/w appendChild & innerText in terms of optimisation -->
