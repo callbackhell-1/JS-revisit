@@ -51,6 +51,12 @@
     const firstLang = document.querySelector("li:nth-child(1)");
     console.log(firstLang); //<li>Javascript</li>
     firstLang.outerHTML = "<li>TypeScript</li>";
+
+    //Delete any value
+    const lastLang = document.querySelector("li:last-child");
+    console.log("Last lang", lastLang);
+    lastLang.remove();
+    
   </script>
 </html>
 
