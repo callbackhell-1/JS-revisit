@@ -20,5 +20,11 @@
     const refe2 = setTimeout(() => {
       document.querySelector("h1").innerHTML = "Hey There !!";
     }, 2000);
+
+    // clearTimeout (stop the event)
+    document.getElementById("stop").addEventListener("click", () => {
+      console.log("clicked !");
+      clearTimeout(refe);
+    });
   </script>
 </html>
