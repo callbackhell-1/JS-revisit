@@ -58,30 +58,33 @@
     </div>
   </body>
   <script>
-    //approach 2:
-    // document.getElementById("owl").onclick = () => {
-    //   alert("Hey ! I'm owl");
-    // };
+    //DIfference b/w event capturing & bubbling
+    document.getElementById("images").addEventListener(
+      "click",
+      (e) => {
+        console.log(e);
+        alert("Image clicked");
+      },
+      false
+    );
 
-    //approach 3 (best approach)(eventListener):
     document.getElementById("owl").addEventListener(
       "click",
       (e) => {
         console.log(e);
-        alert("Hey ! I'm owl from Event Listener");
+        alert("owl clicked");
       },
-      false // false is default, || Event propagation : It has two context, event bubbling,event capturing. Most of the proj is done using default i.e, bublling
+      false
     );
+
+    /*
+    So here when we click on any image (excluding owl), we will get alert msg "Image clicked".
+    
+    But , when we click on owl img , we get alert msg as "owl clicked" once we click ok suddenly "Image clicked" also appeared. 
+
+    Because #images is inside ul tag, & #owk is alsoinside ul tag only. so if we click on owl img, ul tag automatically clicked.
+
+    This is because of event bubbling(bottom top top), we clicked on inner  element, then li then ul
+    */
   </script>
 </html>
-
-<!-- Read below events
-type, timestamp, defaultPrevented
-target, toElement, srcElement, currentTarget,
-clientX, clientY, screenX, screenY
-altkey, ctrlkey, shiftkey, keyCode
-
-    //previous version
-    //attachEvent()
-    //jquery- on
- -->
