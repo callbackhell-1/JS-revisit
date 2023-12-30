@@ -58,40 +58,24 @@
     </div>
   </body>
   <script>
-    //DIfference b/w event capturing & bubbling
-    document.getElementById("images").addEventListener(
-      "click",
-      (e) => {
-        console.log(e);
-        // alert("Image clicked");
-      },
-      false
-    );
+    document.querySelector("#images").addEventListener("click", (e) => {
+      console.log(e);
+      console.log(e.target);
+      //   e.target.remove(); // This method will remove the image, but li bullet will didn't remove.
+      console.log(e.target.tagName); //IMG,LI..
+      if (e.target.tagName == "IMG") {
+        let removeIt = e.target.parentNode; //parentNode of img is li , we want to remove bullet point of li aslos that's why we select parentNode
 
-    document.getElementById("owl").addEventListener(
-      "click",
-      (e) => {
-        console.log(e);
-        // alert("owl clicked");
-        e.stopPropagation();
-      },
-      false
-    );
+        //Method 1:
+        // removeIt.remove();
 
-    //prevent default
-
-    document.getElementById("google").addEventListener(
-      "click",
-      (e) => {
-        console.log("clicked");
-        e.stopPropagation();
-        e.preventDefault();
-      },
-      false
-    );
+        // Method 2:
+        removeIt.parentNode.removeChild(removeIt); //removeIt -> output is li || removeIt.parentNode -> li's parentNode is ul || so from ul  removeChild , remove the child removeIt ie., li. so by this that li will delete
+      }
+    });
 
     /*
-      prevent default : stop the default behaviour
+      Scenario : If we click on any img it, should delete from ul
     */
   </script>
 </html>
