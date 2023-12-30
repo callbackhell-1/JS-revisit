@@ -65,7 +65,7 @@
         console.log(e);
         alert("Image clicked");
       },
-      false
+      true
     );
 
     document.getElementById("owl").addEventListener(
@@ -74,17 +74,12 @@
         console.log(e);
         alert("owl clicked");
       },
-      false
+      true
     );
 
     /*
-    So here when we click on any image (excluding owl), we will get alert msg "Image clicked".
-    
-    But , when we click on owl img , we get alert msg as "owl clicked" once we click ok suddenly "Image clicked" also appeared. 
-
-    Because #images is inside ul tag, & #owk is alsoinside ul tag only. so if we click on owl img, ul tag automatically clicked.
-
-    This is because of event bubbling(bottom top top), we clicked on inner  element, then li then ul
+      first,alert("Image clicked"); then alert("owl clicked"); display
+    Event capturing is Top to bottom
     */
   </script>
 </html>
