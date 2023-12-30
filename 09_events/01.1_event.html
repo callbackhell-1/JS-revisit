@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>htnml Events</title>
+    <title>html Events</title>
   </head>
   <body style="background-color: #414141; color: aliceblue">
     <h2>Amazing image</h2>
@@ -39,7 +39,6 @@
             id="owl"
             src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
             alt=""
-            onclick="alert('owl')" 
           />
         </li>
         <li>
@@ -58,5 +57,31 @@
       </ul>
     </div>
   </body>
-  <script></script>
+  <script>
+    //approach 2:
+    // document.getElementById("owl").onclick = () => {
+    //   alert("Hey ! I'm owl");
+    // };
+
+    //approach 3 (best approach)(eventListener):
+    document.getElementById("owl").addEventListener(
+      "click",
+      (e) => {
+        console.log(e);
+        alert("Hey ! I'm owl from Event Listener");
+      },
+      false // false is default, || Event propagation : It has two context, event bubbling,event capturing. Most of the proj is done using default i.e, bublling
+    );
+  </script>
 </html>
+
+<!-- Read below events
+type, timestamp, defaultPrevented
+target, toElement, srcElement, currentTarget,
+clientX, clientY, screenX, screenY
+altkey, ctrlkey, shiftkey, keyCode
+
+    //previous version
+    //attachEvent()
+    //jquery- on
+ -->
