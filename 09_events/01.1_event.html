@@ -63,7 +63,7 @@
       "click",
       (e) => {
         console.log(e);
-        alert("Image clicked");
+        // alert("Image clicked");
       },
       false
     );
@@ -72,14 +72,26 @@
       "click",
       (e) => {
         console.log(e);
-        alert("owl clicked");
+        // alert("owl clicked");
         e.stopPropagation();
       },
       false
     );
 
+    //prevent default
+
+    document.getElementById("google").addEventListener(
+      "click",
+      (e) => {
+        console.log("clicked");
+        e.stopPropagation();
+        e.preventDefault();
+      },
+      false
+    );
+
     /*
-      stop event bubbling to upper element
+      prevent default : stop the default behaviour
     */
   </script>
 </html>
