@@ -65,7 +65,7 @@
         console.log(e);
         alert("Image clicked");
       },
-      true
+      false
     );
 
     document.getElementById("owl").addEventListener(
@@ -73,13 +73,13 @@
       (e) => {
         console.log(e);
         alert("owl clicked");
+        e.stopPropagation();
       },
-      true
+      false
     );
 
     /*
-      first,alert("Image clicked"); then alert("owl clicked"); display
-    Event capturing is Top to bottom
+      stop event bubbling to upper element
     */
   </script>
 </html>
