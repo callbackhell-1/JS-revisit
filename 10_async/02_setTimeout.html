@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    //Method 1:
+    function changeBackground() {
+      document.body.style.backgroundColor = "grey";
+    }
+    const refe = setTimeout(changeBackground, 5000);
+
+    // Method 2:
+    const refe2 = setTimeout(() => {
+      document.querySelector("h1").innerHTML = "Hey There !!";
+    }, 2000);
+  </script>
+</html>
