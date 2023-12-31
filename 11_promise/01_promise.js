@@ -22,3 +22,15 @@ new Promise((resolve, reject) => {
 }).then(() => {
   console.log("Promised consumed 2");
 });
+
+//Method 3 : sending any value using resolve
+
+const promiseThree = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve({ name: "John Doe", email: "email@email.com" });
+  }, 1000);
+});
+
+promiseThree.then((output) => {
+  console.log(output); //{ name: 'John Doe', email: 'email@email.com' }
+});
