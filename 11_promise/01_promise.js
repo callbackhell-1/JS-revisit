@@ -61,3 +61,41 @@ promiseFour
   });
 
 //Something went wrong
+
+// Method 5 :.then chaining
+const promiseFive = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    let error = false;
+    if (!error) {
+      resolve({ username: "John", password: "123" });
+    } else {
+      reject("Something went wrong");
+    }
+  }, 1000);
+});
+
+promiseFive
+  .then((user) => {
+    console.log(user);
+    return user.username; //{ username: 'John', password: '123' }
+  })
+  .then((username) => {
+    console.log(username); //John
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+/**
+ * .then chaining :
+ * 
+ * promiseFive
+  .then((user) => {
+    console.log(user);
+    return user.username; 
+  })
+
+Here whatever in return value , in this case (user.username) . so this (user.username) value i.e, "John" will passed to next .then ||
+
+And in that ".then",  "John" is passed as an parameter
+ *  
+ */
