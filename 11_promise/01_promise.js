@@ -99,3 +99,34 @@ Here whatever in return value , in this case (user.username) . so this (user.use
 And in that ".then",  "John" is passed as an parameter
  *  
  */
+
+// finally : Always execute, incase of rej also and res also
+
+const promiseSix = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    let error = true;
+    if (!error) {
+      resolve({ username: "John", password: "123" });
+    } else {
+      reject("Something went wrong");
+    }
+  }, 1000);
+});
+
+promiseSix
+  .then((user) => {
+    console.log(user);
+    return user.username;
+  })
+  .then((username) => {
+    console.log(username);
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+  .finally(() => {
+    console.log("Promise is either resolved or rejected !");
+  });
+
+//Something went wrong
+// Promise is either resolved or rejected !
