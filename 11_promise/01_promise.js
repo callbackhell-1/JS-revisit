@@ -34,3 +34,30 @@ const promiseThree = new Promise((resolve, reject) => {
 promiseThree.then((output) => {
   console.log(output); //{ name: 'John Doe', email: 'email@email.com' }
 });
+
+//Method 4 : using reject
+
+const promiseFour = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    let error = true;
+    if (!error) {
+      resolve({ username: "John", password: "123" });
+    } else {
+      reject("Something went wrong");
+    }
+  }, 1000);
+});
+
+promiseFour
+  .then((user) => {
+    console.log(user);
+    return user.username;
+  })
+  .then((username) => {
+    console.log(username);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+//Something went wrong
