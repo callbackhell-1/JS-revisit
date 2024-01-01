@@ -55,8 +55,8 @@ function User(username, loginCount, isLoggedIn) {
   return this;
 }
 
-const newUser = User("John", "15", true);
-console.log(newUser);
+// const newUser = User("John", "15", true);
+// console.log(newUser);
 
 /**
  * {
@@ -95,9 +95,9 @@ console.log(newUser);
  * it will have some value.
  */
 
-const newUser2 = User("Doe", 2, true);
-console.log(newUser);
-console.log(newUser2);
+//  const newUser2 = User("Doe", 2, true);
+// console.log(newUser);
+// console.log(newUser2);
 
 /**
  * {
@@ -160,3 +160,57 @@ console.log(newUser2);
   But for the newUser , username was "John".
   So, this is not the Ideal way because it overwrites the value
  */
+
+//we are using newkeyword i.e, constructor function
+
+const newUser_modified = new User("John", "15", true);
+const newUser2_modified = new User("Doe", 2, true);
+
+console.log("From using new keyword ", newUser_modified);
+console.log(newUser2_modified);
+/**
+ From using new keyword  User { username: 'John', loginCount: '15', isLoggedIn: true }
+
+User { username: 'Doe', loginCount: 2, isLoggedIn: true }
+ */
+
+//Even if we don't write this in function (return this).still o/p will samein case of using new keywords
+
+/**
+ * new :
+ * whenever we use new keyword , an empty object created which is called an instance.
+ * using new keyword a constructor function called
+ * All the arguments  packed inside it(cons. function).
+ * whatever is the arguments it enjected in "this" keyword.
+ * And finally we get the all the result in "this".
+ */
+
+function User1(username, loginCount, isLoggedIn) {
+  this.username = username;
+  this.loginCount = loginCount;
+  this.isLoggedIn = isLoggedIn;
+
+  this.printMyName = function () {
+    console.log(`Hi my username is ${this.username}`);
+  };
+  return this;
+}
+
+const newUser9 = new User1("John", "15", true);
+console.log(newUser9);
+console.log(newUser9.printMyName());
+/**
+ * User1 {
+  username: 'John',
+  loginCount: '15',
+  isLoggedIn: true,
+  printMyName: [Function (anonymous)]
+}
+ */
+//Hi my username is John
+
+console.log(newUser9.constructor);
+//[Function: User1]
+// Constructor is reference of itself
+
+//read : instanceof
