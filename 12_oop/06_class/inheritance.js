@@ -16,10 +16,41 @@ class Teacher extends User {
     this.email = email;
     this.password = password;
   }
+  addCourse() {
+    console.log(`A new course was added by ${this.username}`);
+  }
 }
 
+const Jack = new User("Jack");
+console.log(Jack);
+Jack.logMe();
 /**
- * here super keyword refer, from which class we extends.
- * so here in our case it goes to User class , then go to constructor class and automatically "this"  also sent from Teacher class and that username will be set in "this".
- * and we get username from User class to Teacher class
+ * User { username: 'Jack' }
+USERNAME is Jack
+
  */
+
+const jackTeacherJoe = new Teacher(
+  "jackTeacherJoe",
+  "jackTeacherJoe@email.com",
+  111
+);
+console.log(jackTeacherJoe);
+jackTeacherJoe.addCourse();
+
+/**
+ * Teacher {
+  username: 'jackTeacherJoe',
+  email: 'jackTeacherJoe@email.com',
+  password: 111
+}
+A new course was added by jackTeacherJoe
+ */
+
+jackTeacherJoe.logMe(); // USERNAME is jackTeacherJoe
+
+console.log(Jack === jackTeacherJoe); //false
+console.log(Jack instanceof User); //true
+console.log(Jack instanceof Teacher); //false
+console.log(jackTeacherJoe instanceof User); //true
+console.log(jackTeacherJoe instanceof Teacher); //true
